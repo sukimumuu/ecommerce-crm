@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/products', [ProductsController::class,'products'])->name('products');
 Route::get('/products-create', [ProductsController::class,'create'])->name('products-create');
 Route::post('/products-store', [ProductsController::class,'store'])->name('products-store');
+Route::get('/products-destroy/{id}', [ProductsController::class,'destroy'])->name('products-destroy');

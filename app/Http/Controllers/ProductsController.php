@@ -27,4 +27,10 @@ class ProductsController extends Controller
         Products::create($request->all());
         return redirect()->route('products-create')->with('success', 'Produk baru telah ditambahkan');
     }
+
+    protected function destroy($id){
+        $dreq = Products::find($id);
+        $dreq->delete();
+        return back();
+    }
 }

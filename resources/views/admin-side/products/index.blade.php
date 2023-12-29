@@ -27,6 +27,7 @@
                       <th>Stok</th>
                       <th>Harga</th>
                       <th>Kategori</th>
+                      <th>Tag</th>
                       <th>Tanggal</th>
                     </tr>
                   </thead>
@@ -38,7 +39,11 @@
                         <td>{{ $item->prices }}</td>
                         <td><span class="tag tag-success">{{ $item->categories }}</span></td>
                         <td>{{ $item->tag }}</td>
-                        <td>Sunting | Hapus</td>
+                        <td>{{ $item->timestamps }}</td>
+                        <td>
+                          Sunting | 
+                          <a href="{{ route('products-destroy', ['id' => $item->id]) }}">Hapus</a>
+                        </td>
                       </tr>
                     @endforeach
                   </tbody>
