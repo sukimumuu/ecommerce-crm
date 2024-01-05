@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductsController;
 
 /*
@@ -17,8 +18,10 @@ use App\Http\Controllers\ProductsController;
 Route::get('/', function () {
     return view('layout.master');
 });
-// PRODUCTS 
+// PRODUCTS - ADMIN SIDE
 Route::get('/products', [ProductsController::class,'products'])->name('products');
 Route::get('/products-create', [ProductsController::class,'create'])->name('products-create');
 Route::post('/products-store', [ProductsController::class,'store'])->name('products-store');
 Route::get('/products-destroy/{id}', [ProductsController::class,'destroy'])->name('products-destroy');
+Route::get('/category', [CategoryController::class,'index'])->name('category');
+Route::post('/category-store', [CategoryController::class,'store'])->name('category-store');
